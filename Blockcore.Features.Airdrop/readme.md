@@ -1,5 +1,7 @@
 # How to use the Airdrop feature
 
+
+
 The airdrop feature has two modes `snapshot` and `distribute`
 
 The Airdrop is considered to be a manual processes so it can be run in debug mode and some changes are applied directly to the code, such places are marked as `Manual:` in the `distribute` class.
@@ -17,6 +19,11 @@ To enable the feature in the node builder register the feature itself similar to
 ```
 
 Then run the node with either of the modes enabled.
+
+```
+To build the solution the relevant projects and daemon of the chain
+need to be referenced in the Blockcore.Features.Airdrop.sln file 
+```
 
 ## Snapshot  
 
