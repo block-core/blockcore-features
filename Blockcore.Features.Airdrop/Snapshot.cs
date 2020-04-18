@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Blockcore.Configuration;
+using Blockcore.Features.Consensus.CoinViews;
+using Blockcore.Utilities;
 using DBreeze.DataTypes;
 using Microsoft.Extensions.Logging;
 using NBitcoin;
 using NBitcoin.BitcoinCore;
-using Stratis.Bitcoin.Configuration;
-using Stratis.Bitcoin.Features.Consensus.CoinViews;
-using Stratis.Bitcoin.Utilities;
 
 namespace Blockcore.Features.Airdrop
 {
@@ -44,7 +44,8 @@ namespace Blockcore.Features.Airdrop
                 // Ensure nothing is in cache.
                 this.cachedCoinView.Flush(true);
 
-                DBreezeCoinView dBreezeCoinView = (DBreezeCoinView)this.cachedCoinView.Inner; // ugly hack.
+                // TODO: How do we get this serializer now?
+                //DataStoreSerializer dBreezeCoinView = (DataStoreSerializer)this.cachedCoinView.Inner; // ugly hack.
 
                 UtxoContext utxoContext = new UtxoContext(this.nodeSettings.DataDir, this.airdropSettings.SnapshotHeight.Value);
 
@@ -52,36 +53,37 @@ namespace Blockcore.Features.Airdrop
 
                 Money total = 0;
                 int count = 0;
-                foreach (var item in this.IterateUtxoSet(dBreezeCoinView))
-                {
-                    if (item.TxOut.IsEmpty) 
-                        continue;
+                // TODO: FIX!
+                //foreach (var item in this.IterateUtxoSet(DataStoreSerializer))
+                //{
+                //    if (item.TxOut.IsEmpty) 
+                //        continue;
 
-                    if (count % 100 == 0 && this.nodeLifetime.ApplicationStopping.IsCancellationRequested)
-                        return;
+                //    if (count % 100 == 0 && this.nodeLifetime.ApplicationStopping.IsCancellationRequested)
+                //        return;
 
-                    total += item.TxOut.Value;
-                    count++;
+                //    total += item.TxOut.Value;
+                //    count++;
 
-                    var addressItem = GetAddress(this.network, item.TxOut.ScriptPubKey);
+                //    var addressItem = GetAddress(this.network, item.TxOut.ScriptPubKey);
 
-                    utxoContext.UnspentOutputs.Add(new UTXOSnapshot()
-                    {
-                        Trxid = item.OutPoint.ToString(),
-                        Script = item.TxOut.ScriptPubKey.ToString(),
-                        Value = item.TxOut.Value,
-                        Address = addressItem.address,
-                        ScriptType = addressItem.scriptType.ToString(),
-                        Height = item.Height
-                    });
+                //    utxoContext.UnspentOutputs.Add(new UTXOSnapshot()
+                //    {
+                //        Trxid = item.OutPoint.ToString(),
+                //        Script = item.TxOut.ScriptPubKey.ToString(),
+                //        Value = item.TxOut.Value,
+                //        Address = addressItem.address,
+                //        ScriptType = addressItem.scriptType.ToString(),
+                //        Height = item.Height
+                //    });
 
-                    if (count % 10000 == 0)
-                    {
-                        utxoContext.SaveChanges();
-                    }
+                //    if (count % 10000 == 0)
+                //    {
+                //        utxoContext.SaveChanges();
+                //    }
 
-                    this.logger.LogInformation("OutPoint = {0} - TxOut = {1} total = {2} count = {3}", item.OutPoint, item.TxOut, total, count);
-                }
+                //    this.logger.LogInformation("OutPoint = {0} - TxOut = {1} total = {2} count = {3}", item.OutPoint, item.TxOut, total, count);
+                //}
 
                 utxoContext.SaveChanges();
 
@@ -144,30 +146,32 @@ namespace Blockcore.Features.Airdrop
             throw new Exception("Unknown script type");
         }
 
-        public IEnumerable<(OutPoint OutPoint, TxOut TxOut, int Height)> IterateUtxoSet(DBreezeCoinView dBreezeCoinView)
-        {
-            using (DBreeze.Transactions.Transaction transaction = dBreezeCoinView.CreateTransaction())
-            {
-                transaction.SynchronizeTables("Coins");
-                transaction.ValuesLazyLoadingIsOn = false;
+        // TODO: FIX!
+        //public IEnumerable<(OutPoint OutPoint, TxOut TxOut, int Height)> IterateUtxoSet(DataStoreSerializer dBreezeCoinView)
+        //{
+        //    using (DBreeze.Transactions.Transaction transaction = dBreezeCoinView.CreateTransaction())
+        //    {
+        //        transaction.SynchronizeTables("Coins");
+        //        transaction.ValuesLazyLoadingIsOn = false;
 
-                IEnumerable<Row<byte[], byte[]>> rows = transaction.SelectForward<byte[], byte[]>("Coins");
+        //        IEnumerable<Row<byte[], byte[]>> rows = transaction.SelectForward<byte[], byte[]>("Coins");
 
-                foreach (Row<byte[], byte[]> row in rows)
-                {
-                    Coins coins = this.dBreezeSerializer.Deserialize<Coins>(row.Value);
-                    uint256 trxHash = new uint256(row.Key);
+        //        foreach (Row<byte[], byte[]> row in rows)
+        //        {
+        //            // TODO: Verifi if this is correct "Coins" type.
+        //            NBitcoin.BitcoinCore.Coins coins = this.dBreezeSerializer.Deserialize<NBitcoin.BitcoinCore.Coins>(row.Value);
+        //            uint256 trxHash = new uint256(row.Key);
 
-                    for (int i = 0; i < coins.Outputs.Count; i++)
-                    {
-                        if (coins.Outputs[i] != null)
-                        {
-                            this.logger.LogDebug("UTXO for '{0}' position {1}.", trxHash, i);
-                            yield return (new OutPoint(trxHash, i), coins.Outputs[i], (int)coins.Height);
-                        }
-                    }
-                }
-            }
-        }
+        //            for (int i = 0; i < coins.Outputs.Count; i++)
+        //            {
+        //                if (coins.Outputs[i] != null)
+        //                {
+        //                    this.logger.LogDebug("UTXO for '{0}' position {1}.", trxHash, i);
+        //                    yield return (new OutPoint(trxHash, i), coins.Outputs[i], (int)coins.Height);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

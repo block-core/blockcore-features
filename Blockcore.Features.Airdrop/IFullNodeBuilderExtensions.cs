@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Stratis.Bitcoin.Builder;
-using Stratis.Bitcoin.Configuration.Logging;
-using Stratis.Bitcoin.Features.Consensus;
+﻿using Blockcore.Builder;
+using Blockcore.Configuration.Logging;
+using Blockcore.Features.Consensus;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Blockcore.Features.Airdrop
 {

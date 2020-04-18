@@ -2,14 +2,14 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using NBitcoin;
-using Stratis.Bitcoin.AsyncWork;
-using Stratis.Bitcoin.Builder.Feature;
-using Stratis.Bitcoin.Configuration;
-using Stratis.Bitcoin.EventBus;
-using Stratis.Bitcoin.EventBus.CoreEvents;
-using Stratis.Bitcoin.Features.Consensus.CoinViews;
-using Stratis.Bitcoin.Signals;
-using Stratis.Bitcoin.Utilities;
+using Blockcore.Builder.Feature;
+using Blockcore.Utilities;
+using Blockcore.Signals;
+using Blockcore.Configuration;
+using Blockcore.AsyncWork;
+using Blockcore.Features.Consensus.CoinViews;
+using Blockcore.EventBus;
+using Blockcore.EventBus.CoreEvents;
 
 namespace Blockcore.Features.Airdrop
 {

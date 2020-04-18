@@ -5,11 +5,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using NBitcoin;
-using Stratis.Bitcoin.Configuration;
-using Stratis.Bitcoin.Features.Wallet;
-using Stratis.Bitcoin.Features.Wallet.Interfaces;
-using Stratis.Bitcoin.Interfaces;
-using Stratis.Bitcoin.Utilities;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using NBitcoin;
+using Blockcore.Builder.Feature;
+using Blockcore.Utilities;
+using Blockcore.Signals;
+using Blockcore.Configuration;
+using Blockcore.AsyncWork;
+using Blockcore.Features.Consensus.CoinViews;
+using Blockcore.EventBus;
+using Blockcore.EventBus.CoreEvents;
+using Blockcore.Features.Wallet.Interfaces;
+using Blockcore.Interfaces;
+using Blockcore.Features.Wallet;
 
 namespace Blockcore.Features.Airdrop
 {

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.Features.Airdrop", "Blockcore.Features.Airdrop\Blockcore.Features.Airdrop.csproj", "{81A9980E-266F-4796-8F76-2937E6699D19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.Features.WalletNotify", "Blockcore.Features.WalletNotify\Blockcore.Features.WalletNotify.csproj", "{E21707C3-9A34-4B73-ACDB-310EA8FFC9E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{81A9980E-266F-4796-8F76-2937E6699D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81A9980E-266F-4796-8F76-2937E6699D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81A9980E-266F-4796-8F76-2937E6699D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E21707C3-9A34-4B73-ACDB-310EA8FFC9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21707C3-9A34-4B73-ACDB-310EA8FFC9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E21707C3-9A34-4B73-ACDB-310EA8FFC9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21707C3-9A34-4B73-ACDB-310EA8FFC9E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
