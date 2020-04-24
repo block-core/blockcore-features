@@ -1,12 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+     <Description>Wallet Notify Feature for Blockcore Node. This feature allows you to configure a shell command to be executed whenever an transaction is observed in the wallet. Event is triggered both when transaction is added to the mempool, and when it is mined/staked into a block. When the wallet is rescanned, the events will trigger again. Make sure your software that dependes on notifications handles being triggered multiple times on same transaction ID.</Description>
+     <AssemblyTitle>Blockcore.Features.WalletNotify</AssemblyTitle>
+     <AssemblyName>Blockcore.Features.WalletNotify</AssemblyName>
+     <PackageId>Blockcore.Features.WalletNotify</PackageId>
+     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.2" />
-    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.6" />
+    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.6" />
   </ItemGroup>
 
 </Project>

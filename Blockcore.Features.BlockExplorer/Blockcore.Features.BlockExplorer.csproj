@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+     <Description>Adds extra API methods to the node REST API, allowing block explorer functionality to run locally on a full node. This gives full privacy and no third parties can see what details are looked up. This feature require "txindex" to be enabled on the node.</Description>
+     <AssemblyTitle>Blockcore.Features.BlockExplorer</AssemblyTitle>
+     <AssemblyName>Blockcore.Features.BlockExplorer</AssemblyName>
+     <PackageId>Blockcore.Features.BlockExplorer</PackageId>
+     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.6" />
+    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>

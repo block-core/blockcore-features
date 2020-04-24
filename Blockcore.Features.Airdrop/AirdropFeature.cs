@@ -1,4 +1,4 @@
-﻿using System.Threading;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using NBitcoin;
@@ -24,7 +24,7 @@ namespace Blockcore.Features.Airdrop
         private readonly ChainIndexer chainIndexer;
         private readonly AirdropSettings airdropSettings;
         private readonly NodeSettings nodeSettings;
-        private readonly DBreezeSerializer dBreezeSerializer;
+        private readonly DataStoreSerializer dBreezeSerializer;
         private readonly IAsyncProvider asyncProvider;
         private readonly CachedCoinView cachedCoinView;
         private SubscriptionToken blockConnectedSubscription;
@@ -32,7 +32,7 @@ namespace Blockcore.Features.Airdrop
         private readonly Distribute distribute;
         private readonly Snapshot snapshot;
 
-        public AirdropFeature(Network network, INodeLifetime nodeLifetime, ILoggerFactory loggerFactory, Distribute distribute, Snapshot snapshot , ISignals signals, ChainIndexer chainIndexer, AirdropSettings airdropSettings, NodeSettings nodeSettings, ICoinView cachedCoinView, DBreezeSerializer dBreezeSerializer, IAsyncProvider asyncProvider)
+        public AirdropFeature(Network network, INodeLifetime nodeLifetime, ILoggerFactory loggerFactory, Distribute distribute, Snapshot snapshot , ISignals signals, ChainIndexer chainIndexer, AirdropSettings airdropSettings, NodeSettings nodeSettings, ICoinView cachedCoinView, DataStoreSerializer dBreezeSerializer, IAsyncProvider asyncProvider)
         {
             this.network = network;
             this.nodeLifetime = nodeLifetime;
@@ -45,21 +45,21 @@ namespace Blockcore.Features.Airdrop
             this.dBreezeSerializer = dBreezeSerializer;
             this.asyncProvider = asyncProvider;
             this.cachedCoinView = (CachedCoinView)cachedCoinView;
-            this.logger = loggerFactory.CreateLogger(this.GetType().FullName);
+            logger = loggerFactory.CreateLogger(GetType().FullName);
         }
 
         public override Task InitializeAsync()
         {
-            if (this.airdropSettings.SnapshotMode && this.airdropSettings.SnapshotHeight > 0)
+            if (airdropSettings.SnapshotMode && airdropSettings.SnapshotHeight > 0)
             {
-                this.blockConnectedSubscription = this.signals.Subscribe<BlockConnected>(this.BlockConnected);
+                blockConnectedSubscription = signals.Subscribe<BlockConnected>(BlockConnected);
             }
 
-            if (this.airdropSettings.DistributeMode)
+            if (airdropSettings.DistributeMode)
             {
-                this.distribute.Initialize();
+                distribute.Initialize();
 
-                this.asyncProvider.CreateAndRunAsyncLoop("airdrop-distribute", this.DistributeCoins, this.nodeLifetime.ApplicationStopping, TimeSpans.Minute, TimeSpans.FiveSeconds);
+                asyncProvider.CreateAndRunAsyncLoop("airdrop-distribute", DistributeCoins, nodeLifetime.ApplicationStopping, TimeSpans.Minute, TimeSpans.FiveSeconds);
             }
 
             return Task.CompletedTask;
@@ -67,14 +67,14 @@ namespace Blockcore.Features.Airdrop
 
         private Task DistributeCoins(CancellationToken cancellationToken)
         {
-            return this.distribute.DistributeCoins(cancellationToken);
+            return distribute.DistributeCoins(cancellationToken);
         }
 
         private void BlockConnected(BlockConnected blockConnected)
         {
-            if (blockConnected.ConnectedBlock.ChainedHeader.Height == this.airdropSettings.SnapshotHeight)
+            if (blockConnected.ConnectedBlock.ChainedHeader.Height == airdropSettings.SnapshotHeight)
             {
-                this.snapshot.SnapshotCoins(blockConnected.ConnectedBlock.ChainedHeader);
+                snapshot.SnapshotCoins(blockConnected.ConnectedBlock.ChainedHeader);
             }
         }
     }

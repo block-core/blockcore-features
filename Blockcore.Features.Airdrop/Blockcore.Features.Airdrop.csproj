@@ -1,15 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+     <AssemblyTitle>Blockcore.Features.Airdrop</AssemblyTitle>
+     <AssemblyName>Blockcore.Features.Airdrop</AssemblyName>
+     <PackageId>Blockcore.Features.Airdrop</PackageId>
+     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blockcore.Core" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Core" Version="1.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
-    <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.2" />
-    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.2" />
-    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.6" />
+    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.6" />
+    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.6" />
   </ItemGroup>
 
 </Project>
