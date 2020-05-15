@@ -1,5 +1,6 @@
 ##  (2020-05-15)
 
+* Update Blockcore Features to latest packages ([db30f92](https://github.com/block-core/blockcore-features/commit/db30f92))
 
 
 

@@ -24,8 +24,7 @@ namespace Blockcore.Features.BlockExplorer.Controllers
    /// <summary>
    /// Controller providing operations on a blockstore.
    /// </summary>
-   [ApiVersion("2.0-dev")]
-   [Route("api/v{version:apiVersion}/transactions")]
+   [Route("api/features/explorer/transactions")]
    public class TransactionStoreController : Controller
    {
       private readonly IWalletManager walletManager;
