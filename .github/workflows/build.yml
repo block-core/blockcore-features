@@ -56,5 +56,5 @@ jobs:
         draft: true
         prerelease: false
         body: ''
-        name: "Blockcore ${{env.VERSION}}"
+        name: "Blockcore Features ${{env.VERSION}}"
         tag: ${{env.VERSION}}

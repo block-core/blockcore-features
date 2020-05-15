@@ -13,9 +13,7 @@ using Blockcore.Connection;
 using Blockcore.Controllers.Models;
 using Blockcore.Features.BlockStore;
 using Blockcore.Features.BlockStore.Models;
-using Blockcore.Features.Wallet.Broadcasting;
 using Blockcore.Features.Wallet.Interfaces;
-using Blockcore.Features.Wallet.Models;
 using Blockcore.Interfaces;
 using Blockcore.Utilities;
 using Blockcore.Utilities.JsonErrors;
@@ -160,70 +158,5 @@ namespace Blockcore.Features.BlockExplorer.Controllers
             return ErrorHelpers.BuildErrorResponse(HttpStatusCode.BadRequest, e.Message, e.ToString());
          }
       }
-
-      ///// <summary>
-      ///// Sends a transaction.
-      ///// </summary>
-      ///// <param name="request">The hex representing the transaction.</param>
-      ///// <returns></returns>
-      //[Route("retry-transaction")]
-      //[HttpPost]
-      //public IActionResult RetryTransaction([FromBody] BroadcastTransactionModel request)
-      //{
-      //    //Guard.NotNull(request, nameof(request));
-
-      //    //// checks the request is valid
-      //    //if (!this.ModelState.IsValid)
-      //    //{
-      //    //    return ModelStateErrors.BuildErrorResponse(this.ModelState);
-      //    //}
-
-      //    //if (!this.connectionManager.ConnectedPeers.Any())
-      //    //{
-      //    //    this.logger.LogTrace("(-)[NO_CONNECTED_PEERS]");
-      //    //    return ErrorHelpers.BuildErrorResponse(HttpStatusCode.Forbidden, "Can't send transaction: sending transaction requires at least one connection!", string.Empty);
-      //    //}
-
-      //    //try
-      //    //{
-      //    //    IEnumerable<AccountHistory> accountsHistory = this.walletManager.GetHistory(request.WalletName, request.AccountName);
-
-      //    //    Transaction transaction = this.network.CreateTransaction(request.Hex);
-
-      //    //    var model = new WalletSendTransactionModel
-      //    //    {
-      //    //        TransactionId = transaction.GetHash(),
-      //    //        Outputs = new List<TransactionOutputModel>()
-      //    //    };
-
-      //    //    foreach (TxOut output in transaction.Outputs)
-      //    //    {
-      //    //        bool isUnspendable = output.ScriptPubKey.IsUnspendable;
-      //    //        model.Outputs.Add(new TransactionOutputModel
-      //    //        {
-      //    //            Address = isUnspendable ? null : output.ScriptPubKey.GetDestinationAddress(this.network).ToString(),
-      //    //            Amount = output.Value,
-      //    //            OpReturnData = isUnspendable ? Encoding.UTF8.GetString(output.ScriptPubKey.ToOps().Last().PushData) : null
-      //    //        });
-      //    //    }
-
-      //    //    this.broadcasterManager.BroadcastTransactionAsync(transaction).GetAwaiter().GetResult();
-
-      //    //    TransactionBroadcastEntry transactionBroadCastEntry = this.broadcasterManager.GetTransaction(transaction.GetHash());
-
-      //    //    if (!string.IsNullOrEmpty(transactionBroadCastEntry?.ErrorMessage))
-      //    //    {
-      //    //        this.logger.LogError("Exception occurred: {0}", transactionBroadCastEntry.ErrorMessage);
-      //    //        return ErrorHelpers.BuildErrorResponse(HttpStatusCode.BadRequest, transactionBroadCastEntry.ErrorMessage, "Transaction Exception");
-      //    //    }
-
-      //    //    return this.Json(model);
-      //    //}
-      //    //catch (Exception e)
-      //    //{
-      //    //    this.logger.LogError("Exception occurred: {0}", e.ToString());
-      //    //    return ErrorHelpers.BuildErrorResponse(HttpStatusCode.BadRequest, e.Message, e.ToString());
-      //    //}
-      //}
    }
 }
