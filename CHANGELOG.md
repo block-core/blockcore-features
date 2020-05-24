@@ -1,5 +1,6 @@
-##  (2020-05-15)
+##  (2020-05-24)
 
+* Update package references to require major version only for Blockcore packages ([ed616d5](https://github.com/block-core/blockcore-features/commit/ed616d5))
 
 
 
