@@ -1,5 +1,16 @@
 ##  (2020-05-15)
 
+
+
+
+## <small>1.0.2 (2020-05-15)</small>
+
+* Remove ApiVersioning as the NodeHost do not support versioning ([daf35db](https://github.com/block-core/blockcore-features/commit/daf35db))
+
+
+
+## <small>1.0.1 (2020-05-15)</small>
+
 * Update Blockcore Features to latest packages ([db30f92](https://github.com/block-core/blockcore-features/commit/db30f92))
 
 

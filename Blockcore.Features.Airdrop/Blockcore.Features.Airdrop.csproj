@@ -10,11 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blockcore.Core" Version="1.0.8" />
+    <PackageReference Include="Blockcore.Core" Version="1.*" />
+    <PackageReference Include="Blockcore.Features.Consensus" Version="1.*" />
+    <PackageReference Include="Blockcore.Features.Wallet" Version="1.*" />
+    <PackageReference Include="Blockcore.NBitcoin" Version="1.*" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
-    <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.8" />
-    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.8" />
-    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.8" />
   </ItemGroup>
 
 </Project>
