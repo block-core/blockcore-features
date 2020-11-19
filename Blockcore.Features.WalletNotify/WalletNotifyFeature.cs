@@ -6,6 +6,7 @@ using Blockcore.Builder;
 using Blockcore.Builder.Feature;
 using Blockcore.Configuration;
 using Blockcore.Configuration.Logging;
+using Blockcore.Consensus.TransactionInfo;
 using Blockcore.EventBus;
 using Blockcore.Features.Wallet;
 using Blockcore.Features.Wallet.Events;

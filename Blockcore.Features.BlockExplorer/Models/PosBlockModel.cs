@@ -4,6 +4,8 @@ using NBitcoin;
 using Newtonsoft.Json;
 using Blockcore.Controllers.Models;
 using Blockcore.Utilities.JsonConverters;
+using Blockcore.Consensus.BlockInfo;
+using Blockcore.Consensus.Chain;
 
 namespace Blockcore.Features.BlockExplorer.Models
 {

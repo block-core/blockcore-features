@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using Blockcore.Configuration;
+using Blockcore.Consensus.Chain;
+using Blockcore.Consensus.ScriptInfo;
 using Blockcore.Features.Consensus.CoinViews;
+using Blockcore.Networks;
 using Blockcore.Utilities;
 using DBreeze.DataTypes;
 using Microsoft.Extensions.Logging;
@@ -93,7 +96,7 @@ namespace Blockcore.Features.Airdrop
 
       public static (TxOutType scriptType, string address) GetAddress(Network network, Script script)
       {
-         ScriptTemplate template = NBitcoin.StandardScripts.GetTemplateFromScriptPubKey(script);
+         ScriptTemplate template = StandardScripts.GetTemplateFromScriptPubKey(script);
 
          if (template == null)
             return (TxOutType.TX_NONSTANDARD, string.Empty);

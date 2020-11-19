@@ -21,6 +21,9 @@ using Blockcore.Features.Wallet.Interfaces;
 using Blockcore.Interfaces;
 using Blockcore.Features.Wallet;
 using Blockcore.Features.Wallet.Types;
+using Blockcore.Networks;
+using Blockcore.Consensus.TransactionInfo;
+using Blockcore.Consensus.ScriptInfo;
 
 namespace Blockcore.Features.Airdrop
 {

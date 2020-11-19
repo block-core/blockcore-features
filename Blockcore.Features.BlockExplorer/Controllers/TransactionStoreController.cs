@@ -18,6 +18,11 @@ using Blockcore.Interfaces;
 using Blockcore.Utilities;
 using Blockcore.Utilities.JsonErrors;
 using Blockcore.Utilities.ModelStateErrors;
+using Blockcore.Consensus.Chain;
+using Blockcore.Networks;
+using Blockcore.Features.BlockStore.Repository;
+using Blockcore.Consensus.BlockInfo;
+using Blockcore.Consensus.TransactionInfo;
 
 namespace Blockcore.Features.BlockExplorer.Controllers
 {

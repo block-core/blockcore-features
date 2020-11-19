@@ -14,13 +14,13 @@ using Blockcore.Configuration;
 using Blockcore.Configuration.Logging;
 using Blockcore.Connection;
 using Blockcore.Consensus;
-using Blockcore.Features.BlockStore.Controllers;
 using Blockcore.Interfaces;
 using Blockcore.P2P.Protocol.Payloads;
 using Blockcore.Utilities;
 using Blockcore.Features.BlockStore;
 using Blockcore.Signals;
 using Blockcore.Features.BlockExplorer.Controllers;
+using Blockcore.Consensus.Chain;
 
 namespace Blockcore.Features.BlockExplorer
 {

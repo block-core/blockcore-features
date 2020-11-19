@@ -1,8 +1,8 @@
-﻿using System.Text;
+using System.Text;
 using Blockcore.Configuration;
+using Blockcore.Networks;
 using Blockcore.Utilities;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
 
 namespace Blockcore.Features.Airdrop
 {
@@ -29,20 +29,20 @@ namespace Blockcore.Features.Airdrop
         {
             Guard.NotNull(nodeSettings, nameof(nodeSettings));
             
-            this.logger = nodeSettings.LoggerFactory.CreateLogger(typeof(AirdropSettings).FullName);            
+            logger = nodeSettings.LoggerFactory.CreateLogger(typeof(AirdropSettings).FullName);            
             TextFileConfiguration config = nodeSettings.ConfigReader;
 
-            this.SnapshotMode = config.GetOrDefault<bool>("snapshot", false, this.logger);
-            this.DistributeMode = config.GetOrDefault<bool>("distribute", false, this.logger);
+            SnapshotMode = config.GetOrDefault<bool>("snapshot", false, logger);
+            DistributeMode = config.GetOrDefault<bool>("distribute", false, logger);
 
-            if (this.SnapshotMode && this.DistributeMode)
+            if (SnapshotMode && DistributeMode)
             {
                 throw new ConfigurationException("-distribute and -snapshot can not be both enabled");
             }
 
-            this.SnapshotHeight = config.GetOrDefault<int>("snapshotheight", 0, this.logger);
+            SnapshotHeight = config.GetOrDefault<int>("snapshotheight", 0, logger);
 
-            if (this.SnapshotHeight == 0)
+            if (SnapshotHeight == 0)
             {
                 throw new ConfigurationException("-snapshotheight not found or invalid");
 

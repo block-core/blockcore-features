@@ -13,6 +13,9 @@ using Blockcore.Interfaces;
 using Blockcore.Utilities;
 using Blockcore.Utilities.JsonErrors;
 using Blockcore.Utilities.ModelStateErrors;
+using Blockcore.Consensus.Chain;
+using Blockcore.Networks;
+using Blockcore.Consensus.BlockInfo;
 
 namespace Blockcore.Features.BlockExplorer.Controllers
 {

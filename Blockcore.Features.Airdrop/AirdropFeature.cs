@@ -10,6 +10,8 @@ using Blockcore.AsyncWork;
 using Blockcore.Features.Consensus.CoinViews;
 using Blockcore.EventBus;
 using Blockcore.EventBus.CoreEvents;
+using Blockcore.Consensus.Chain;
+using Blockcore.Networks;
 
 namespace Blockcore.Features.Airdrop
 {

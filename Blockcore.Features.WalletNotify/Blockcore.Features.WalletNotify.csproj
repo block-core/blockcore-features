@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blockcore.Features.Wallet" Version="1.*" />
-    <PackageReference Include="Blockcore.NBitcoin" Version="1.*" />
+    <PackageReference Include="Blockcore.Core" Version="1.*" />
   </ItemGroup>
 
 </Project>
