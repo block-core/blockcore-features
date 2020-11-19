@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.Features.BlockExplorer", "Blockcore.Features.BlockExplorer\Blockcore.Features.BlockExplorer.csproj", "{40ECC253-7801-48F7-9FF0-6B6DB9522AC2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.Features.Storage", "Blockcore.Features.Storage\Blockcore.Features.Storage.csproj", "{BEC08692-6AE6-445D-B7EF-190BC0BBFBA0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.Features.Storage.Tests", "Blockcore.Features.Storage.Tests\Blockcore.Features.Storage.Tests.csproj", "{FCF24192-4216-45B7-9F67-3F06E52B6802}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{40ECC253-7801-48F7-9FF0-6B6DB9522AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40ECC253-7801-48F7-9FF0-6B6DB9522AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40ECC253-7801-48F7-9FF0-6B6DB9522AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC08692-6AE6-445D-B7EF-190BC0BBFBA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC08692-6AE6-445D-B7EF-190BC0BBFBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC08692-6AE6-445D-B7EF-190BC0BBFBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC08692-6AE6-445D-B7EF-190BC0BBFBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF24192-4216-45B7-9F67-3F06E52B6802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF24192-4216-45B7-9F67-3F06E52B6802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF24192-4216-45B7-9F67-3F06E52B6802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF24192-4216-45B7-9F67-3F06E52B6802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
