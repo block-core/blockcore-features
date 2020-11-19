@@ -5,6 +5,7 @@ on:
     types: [published]
   repository_dispatch:
     types: [publish-packages]
+  workflow_dispatch:
 
 jobs:
 
@@ -26,7 +27,7 @@ jobs:
         dotnet-version: '3.1.101' 
 
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      uses: NuGet/setup-nuget@v1.0.5
 
     - name: Nuget Pack
       run: dotnet pack --configuration ${{env.BUILD_CONFIGURATION}} --output "${{github.workspace}}\package\" ${{env.SOLUTION_PATH}}
