@@ -47,9 +47,9 @@ namespace Blockcore.Features.BlockExplorer.Controllers
           Network network,
           ILoggerFactory loggerFactory,
           IBlockStore blockStoreCache,
-          IStakeChain stakeChain,
-       ChainIndexer chain,
-          IChainState chainState)
+          ChainIndexer chain,
+          IChainState chainState,
+          IStakeChain stakeChain = null)
       {
          Guard.NotNull(loggerFactory, nameof(loggerFactory));
          Guard.NotNull(blockStoreCache, nameof(blockStoreCache));
@@ -144,18 +144,25 @@ namespace Blockcore.Features.BlockExplorer.Controllers
 
          try
          {
-            BlockStake blockStake = stakeChain.Get(chainHeader.HashBlock);
             Block block = blockStoreCache.GetBlock(chainHeader.Header.GetHash());
 
-            if (block == null) return new NotFoundObjectResult("Block not found");
+            if (block == null)
+            {
+               return new NotFoundObjectResult("Block not found");
+            }
 
             PosBlockModel blockModel = new PosBlockModel(block, chain);
 
-            if (blockStake != null)
+            if (stakeChain != null)
             {
-               blockModel.StakeTime = blockStake.StakeTime;
-               blockModel.StakeModifierV2 = blockStake.StakeModifierV2;
-               blockModel.HashProof = blockStake.HashProof;
+               BlockStake blockStake = stakeChain.Get(chainHeader.HashBlock);
+
+               if (blockStake != null)
+               {
+                  blockModel.StakeTime = blockStake.StakeTime;
+                  blockModel.StakeModifierV2 = blockStake.StakeModifierV2;
+                  blockModel.HashProof = blockStake.HashProof;
+               }
             }
 
             return Json(blockModel);
