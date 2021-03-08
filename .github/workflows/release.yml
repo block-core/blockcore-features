@@ -38,7 +38,7 @@ jobs:
         folder: "./artifacts/"
 
     - name: Display structure of downloaded files
-      run: ls -R
+      run: ls -s -R
 
     - name: Nuget Push
-      run: nuget push ${{github.workspace}}/artifacts/*.nupkg -ApiKey ${{secrets.NUGET_KEY}} -Source "https://api.nuget.org/v3/index.json" -SkipDuplicate
+      run: nuget push "${{github.workspace}}/artifacts/*.nupkg" -ApiKey ${{secrets.NUGET_KEY}} -Source "https://api.nuget.org/v3/index.json" -SkipDuplicate

@@ -6,7 +6,6 @@
      <AssemblyName>Blockcore.Features.Airdrop</AssemblyName>
      <PackageId>Blockcore.Features.Airdrop</PackageId>
      <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
