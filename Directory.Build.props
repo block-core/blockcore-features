@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <RuntimeFrameworkVersion>3.1.11</RuntimeFrameworkVersion>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>true</IsPackable>
@@ -12,7 +12,16 @@
     <PackageIcon></PackageIcon>
     <PackageIconUrl>https://www.blockcore.net/assets/blockcore-256x256.png</PackageIconUrl>
     <PackageTags>blockchain;cryptocurrency;crypto;C#;.NET;bitcoin;blockcore</PackageTags>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+  </ItemGroup>
 
   <Target Name="AddInternalsVisibleTo" BeforeTargets="CoreCompile">
     <ItemGroup>
