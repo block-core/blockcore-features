@@ -60,6 +60,7 @@ jobs:
       uses: sondreb/action-release@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        verbose: true
         folder: "${{github.workspace}}/package/"
         draft: true
         prerelease: false
