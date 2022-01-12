@@ -6,12 +6,15 @@
      <AssemblyName>Blockcore.Features.WalletNotify</AssemblyName>
      <PackageId>Blockcore.Features.WalletNotify</PackageId>
      <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Blockcore.Features.Wallet" Version="1.*" />
     <PackageReference Include="Blockcore.Core" Version="1.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
   </ItemGroup>
 
 </Project>

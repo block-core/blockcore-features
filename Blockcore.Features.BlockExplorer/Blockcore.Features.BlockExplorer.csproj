@@ -6,7 +6,6 @@
      <AssemblyName>Blockcore.Features.BlockExplorer</AssemblyName>
      <PackageId>Blockcore.Features.BlockExplorer</PackageId>
      <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +15,10 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
   </ItemGroup>
 
 </Project>
