@@ -191,7 +191,6 @@ namespace Blockcore.Features.Airdrop
                WalletPassword = password,
                Recipients = recipients,
                ChangeAddress = change,
-               UseSegwitChangeAddress = true,
                FeeType = FeeType.Low
             };
 
