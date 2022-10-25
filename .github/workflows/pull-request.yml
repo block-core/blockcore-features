@@ -32,10 +32,10 @@ jobs:
         dotnet-version: | 
           6.0.x
 
-    - name: Setup Node.js (12.x)
+    - name: Setup Node.js (18)
       uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 18
 
     - name: Variables
       run: |
