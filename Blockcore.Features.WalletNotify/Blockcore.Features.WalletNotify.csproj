@@ -6,6 +6,7 @@
      <AssemblyName>Blockcore.Features.WalletNotify</AssemblyName>
      <PackageId>Blockcore.Features.WalletNotify</PackageId>
      <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>

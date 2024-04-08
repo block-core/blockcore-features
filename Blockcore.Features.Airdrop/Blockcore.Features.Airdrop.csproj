@@ -5,6 +5,7 @@
      <AssemblyName>Blockcore.Features.Airdrop</AssemblyName>
      <PackageId>Blockcore.Features.Airdrop</PackageId>
      <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>

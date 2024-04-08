@@ -4,12 +4,11 @@ using Blockcore.Configuration;
 using Blockcore.Consensus.Chain;
 using Blockcore.Consensus.ScriptInfo;
 using Blockcore.Features.Consensus.CoinViews;
+using Blockcore.NBitcoin;
 using Blockcore.Networks;
 using Blockcore.Utilities;
 using DBreeze.DataTypes;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
-using NBitcoin.BitcoinCore;
 
 namespace Blockcore.Features.Airdrop
 {

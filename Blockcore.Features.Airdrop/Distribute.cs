@@ -4,11 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
 using Blockcore.Builder.Feature;
 using Blockcore.Utilities;
 using Blockcore.Signals;
@@ -24,6 +22,7 @@ using Blockcore.Features.Wallet.Types;
 using Blockcore.Networks;
 using Blockcore.Consensus.TransactionInfo;
 using Blockcore.Consensus.ScriptInfo;
+using Blockcore.NBitcoin;
 
 namespace Blockcore.Features.Airdrop
 {

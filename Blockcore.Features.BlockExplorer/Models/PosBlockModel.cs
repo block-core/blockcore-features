@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
-using NBitcoin;
 using Newtonsoft.Json;
 using Blockcore.Controllers.Models;
 using Blockcore.Utilities.JsonConverters;
 using Blockcore.Consensus.BlockInfo;
 using Blockcore.Consensus.Chain;
+using Blockcore.NBitcoin;
 
 namespace Blockcore.Features.BlockExplorer.Models
 {

@@ -1,7 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
 using Blockcore.Builder.Feature;
 using Blockcore.Utilities;
 using Blockcore.Signals;

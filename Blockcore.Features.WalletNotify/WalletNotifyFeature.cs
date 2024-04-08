@@ -13,7 +13,6 @@ using Blockcore.Features.Wallet.Events;
 using Blockcore.Signals;
 using Blockcore.Utilities;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
 
 namespace Blockcore.Features.WalletNotify
 {

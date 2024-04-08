@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Blockcore.Features.BlockExplorer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
 using Blockcore.Base;
 using Blockcore.Connection;
 using Blockcore.Controllers.Models;
@@ -23,6 +22,7 @@ using Blockcore.Networks;
 using Blockcore.Features.BlockStore.Repository;
 using Blockcore.Consensus.BlockInfo;
 using Blockcore.Consensus.TransactionInfo;
+using Blockcore.NBitcoin;
 
 namespace Blockcore.Features.BlockExplorer.Controllers
 {
