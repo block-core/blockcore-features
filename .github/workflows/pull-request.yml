@@ -30,12 +30,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: | 
-          8.0.x
+          9.0.x
 
-    - name: Setup Node.js (18)
+    - name: Setup Node.js (22)
       uses: actions/setup-node@v1
       with:
-        node-version: 18
+        node-version: 22
 
     - name: Variables
       run: |

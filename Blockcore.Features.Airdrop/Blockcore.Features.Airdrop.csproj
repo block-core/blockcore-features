@@ -5,18 +5,17 @@
      <AssemblyName>Blockcore.Features.Airdrop</AssemblyName>
      <PackageId>Blockcore.Features.Airdrop</PackageId>
      <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blockcore.Core" Version="1.1.*" />
-    <PackageReference Include="Blockcore.Features.Consensus" Version="1.1.*" />
-    <PackageReference Include="Blockcore.Features.Wallet" Version="1.1.*" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
+    <PackageReference Include="Blockcore.Core" Version="1.2.42" />
+    <PackageReference Include="Blockcore.Features.Consensus" Version="1.2.42" />
+    <PackageReference Include="Blockcore.Features.Wallet" Version="1.2.42" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
